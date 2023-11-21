@@ -14,15 +14,21 @@ p = st.number_input("Select the probability of heads", min_value=0.0, max_value=
 st.write("Selected N:", N)
 st.write("Selected p:", p)
 
+def flips(N, p):
 
-flips = np.random.random(N)
+	flips = np.random.random(N)
 
-nb_heads = np.sum(np.where(flips < p, 1, 0))
-nb_tails = N - nb_heads
-st.write("Number of heads:", nb_heads)
-st.write("Number of tails:", nb_tails)
+	nb_heads = np.sum(np.where(flips < p, 1, 0))
+	nb_tails = N - nb_heads
+	st.write("Number of heads:", nb_heads)
+	st.write("Number of tails:", nb_tails)
 
-percentage_heads = np.round(100*nb_heads/N, 2)
-percentage_tails = np.round(100*nb_tails/N, 2) 
-st.write("Percentage of heads:", percentage_heads)
-st.write("Percentage of tails:", percentage_tails)
+	percentage_heads = np.round(100*nb_heads/N, 2)
+	percentage_tails = np.round(100*nb_tails/N, 2) 
+	st.write("Percentage of heads:", percentage_heads)
+	st.write("Percentage of tails:", percentage_tails)
+
+launch = st.button("Launch simulation")
+
+if launch:
+    flips(N, p) 
