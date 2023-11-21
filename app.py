@@ -11,7 +11,7 @@ N = st.number_input("Select the number of flips", min_value=1, max_value=1000000
 p = st.number_input("Select the probability of heads", min_value=0.0, max_value=1.0, step=0.01)
     
 # Display the selected values
-st.write("Selected N:", n)
+st.write("Selected N:", N)
 st.write("Selected p:", p)
 
 
